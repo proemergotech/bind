@@ -1,0 +1,41 @@
+image: docker:latest
+services:
+  - docker:dind
+
+stages:
+  - build
+
+verify:
+  stage: build
+  script:
+    - apk update && apk add git
+    - ./verify.sh
+  only:
+    - branches
+  except:
+    - master
+
+build:
+  stage: build
+  image: golang:1.15
+  script:
+    - go build -a -mod=readonly -o /dev/null ./...
+
+test:
+  stage: build
+  image: golang:1.15
+  script:
+    - go test -count=1 -v ./...
+
+lint:
+  stage: build
+  image: registry.gitlab.com/gitlab-org/gitlab-build-images:golangci-lint-alpine
+  script:
+    # Write the code coverage report to gl-code-quality-report.json
+    # and print linting issues to stdout in the format: path/to/file:line description
+    - golangci-lint run -v --timeout 2m --out-format code-climate -c .golangci.yml | tee gl-code-quality-report.json | jq -r '.[] | "\(.location.path):\(.location.lines.begin) \(.description)"'
+  artifacts:
+    reports:
+      codequality: gl-code-quality-report.json
+    paths:
+      - gl-code-quality-report.json
