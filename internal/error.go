@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/labstack/echo/v4"
-	"gitlab.com/proemergotech/errors"
+	"github.com/proemergotech/errors"
 )
 
 const (

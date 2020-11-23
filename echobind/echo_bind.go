@@ -5,7 +5,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 
-	"gitlab.com/proemergotech/bind/internal"
+	"github.com/proemergotech/bind/internal"
 )
 
 func JSONContentTypeMiddleware() echo.MiddlewareFunc {

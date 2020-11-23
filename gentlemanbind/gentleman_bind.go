@@ -7,9 +7,8 @@ import (
 	"reflect"
 	"strings"
 
-	"gitlab.com/proemergotech/errors"
-
 	jsoniter "github.com/json-iterator/go"
+	"github.com/proemergotech/errors"
 	gctx "gopkg.in/h2non/gentleman.v2/context"
 	p "gopkg.in/h2non/gentleman.v2/plugin"
 )

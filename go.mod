@@ -1,4 +1,4 @@
-module gitlab.com/proemergotech/bind
+module github.com/proemergotech/bind
 
 go 1.15
 
@@ -6,6 +6,6 @@ require (
 	github.com/json-iterator/go v1.1.7
 	github.com/labstack/echo/v4 v4.1.17
 	github.com/nbio/st v0.0.0-20140626010706-e9e8d9816f32 // indirect
-	gitlab.com/proemergotech/errors v1.0.0
+	github.com/proemergotech/errors v1.0.1
 	gopkg.in/h2non/gentleman.v2 v2.0.4
 )
