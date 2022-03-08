@@ -1,1 +1,1 @@
-bind
+[![Go Reference](https://pkg.go.dev/badge/github.com/proemergotech/bind.svg)](https://pkg.go.dev/github.com/proemergotech/bind)

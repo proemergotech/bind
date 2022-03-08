@@ -5,7 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/proemergotech/errors"
+	"github.com/proemergotech/errors/v2"
+
 	gctx "gopkg.in/h2non/gentleman.v2/context"
 )
 
